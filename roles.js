@@ -1,7 +1,7 @@
 const AccessControl = require('accesscontrol')
 const access = new AccessControl();
 
-const roles =()=>{
+const roles =(()=>{
     access.grant('student')
     .readOwn('profile')
     .updateOwn('profile')
@@ -17,7 +17,6 @@ const roles =()=>{
     .deleteAny('profile')
     
     return access;
-}
-roles();
+})();
 
 module.exports = roles;
